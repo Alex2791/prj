@@ -1,3 +1,7 @@
+application_application:
+    resource: "@ApplicationApplicationBundle/Resources/config/routing.yml"
+    prefix:   /
+
 bundles_store:
     resource: "@BundlesStoreBundle/Resources/config/routing.yml"
     prefix:   /

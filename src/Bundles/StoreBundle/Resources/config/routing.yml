@@ -1,0 +1,3 @@
+bundles_store_homepage:
+      pattern:  /{name}
+      defaults: { _controller: BundlesStoreBundle:Default:index }

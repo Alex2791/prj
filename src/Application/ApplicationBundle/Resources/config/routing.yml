@@ -1,0 +1,3 @@
+application_application_homepage:
+      pattern:  /
+      defaults: { _controller: ApplicationApplicationBundle:Page:index }
