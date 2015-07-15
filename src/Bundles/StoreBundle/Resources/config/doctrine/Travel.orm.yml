@@ -1,0 +1,20 @@
+Bundles\StoreBundle\Entity\Travel:
+    type: entity
+    table: null
+    repositoryClass: Bundles\StoreBundle\Entity\TravelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        data:
+            type: datetime
+    lifecycleCallbacks: {  }

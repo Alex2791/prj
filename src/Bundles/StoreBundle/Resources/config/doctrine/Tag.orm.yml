@@ -1,0 +1,21 @@
+Bundles\StoreBundle\Entity\Tag:
+    type: entity
+    table: null
+    repositoryClass: Bundles\StoreBundle\Entity\TagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        damId:
+            type: integer
+        travelId:
+            type: integer
+    lifecycleCallbacks: {  }

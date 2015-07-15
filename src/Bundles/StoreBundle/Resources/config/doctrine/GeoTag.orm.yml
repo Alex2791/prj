@@ -1,0 +1,25 @@
+Bundles\StoreBundle\Entity\GeoTag:
+    type: entity
+    table: null
+    repositoryClass: Bundles\StoreBundle\Entity\GeoTagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        pin:
+            type: string
+            length: 255
+        city:
+            type: string
+            length: 255
+        country:
+            type: string
+            length: 255
+        damId:
+            type: integer
+    lifecycleCallbacks: {  }

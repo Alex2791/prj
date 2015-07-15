@@ -1,0 +1,19 @@
+Bundles\StoreBundle\Entity\Photo:
+    type: entity
+    table: null
+    repositoryClass: Bundles\StoreBundle\Entity\PhotoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        adress:
+            type: string
+            length: 255
+        damId:
+            type: integer
+        travelId:
+            type: integer
+    lifecycleCallbacks: {  }
