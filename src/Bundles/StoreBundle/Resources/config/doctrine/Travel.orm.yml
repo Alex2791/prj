@@ -17,4 +17,23 @@ Bundles\StoreBundle\Entity\Travel:
             length: 255
         data:
             type: datetime
+    oneToMany:
+          dam:
+              targetEntity: Dam
+              mappedBy: travel
+          photo:
+              targetEntity: Photo
+              mappedBy: travel
+    manyToMany:
+        user:
+          targetEntity: User
+          inversedBy: travel
+          joinTable:
+            name: user_to_travel
+            joinColumns:
+                travelId:
+                    referencedColumnName: id
+            inverseJoinColumns:
+                userId:
+                    referencedColumnName: id
     lifecycleCallbacks: {  }

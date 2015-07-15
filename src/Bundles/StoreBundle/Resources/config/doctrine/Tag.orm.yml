@@ -18,4 +18,11 @@ Bundles\StoreBundle\Entity\Tag:
             type: integer
         travelId:
             type: integer
+    manyToOne:
+         dam:
+           targetEntity: Dam
+           inversedBy: tag
+           joinColumn:
+             name: damId
+             referencedColumnName: id
     lifecycleCallbacks: {  }

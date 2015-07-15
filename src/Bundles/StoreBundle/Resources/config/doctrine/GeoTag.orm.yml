@@ -22,4 +22,11 @@ Bundles\StoreBundle\Entity\GeoTag:
             length: 255
         damId:
             type: integer
+    manyToOne:
+         dam:
+           targetEntity: Dam
+           inversedBy: geotag
+           joinColumn:
+             name: damId
+             referencedColumnName: id
     lifecycleCallbacks: {  }

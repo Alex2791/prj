@@ -18,5 +18,34 @@ Bundles\StoreBundle\Entity\Dam:
             type: boolean
         travelId:
             type: integer
+    oneToMany:
+          photo:
+              targetEntity: Photo
+              mappedBy: dam
+          geotag:
+              targetEntity: GeoTag
+              mappedBy: dam
+          tag:
+              targetEntity: Tag
+              mappedBy: dam
+    manyToOne:
+         travel:
+           targetEntity: Travel
+           inversedBy: dam
+           joinColumn:
+             name: travelId
+             referencedColumnName: id
+    manyToMany:
+        user:
+          targetEntity: User
+          inversedBy: dam
+          joinTable:
+            name: user_to_dam
+            joinColumns:
+                damId:
+                    referencedColumnName: id
+            inverseJoinColumns:
+                userId:
+                    referencedColumnName: id
 
     lifecycleCallbacks: {  }

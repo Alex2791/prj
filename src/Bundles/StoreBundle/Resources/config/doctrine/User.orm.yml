@@ -24,4 +24,11 @@ Bundles\StoreBundle\Entity\User:
         email:
             type: string
             length: 255
+    manyToMany:
+         travel:
+             targetEntity: Travel
+             mappedBy: user
+         dam:
+             targetEntity: Dam
+             mappedBy: user
     lifecycleCallbacks: {  }

@@ -16,4 +16,17 @@ Bundles\StoreBundle\Entity\Photo:
             type: integer
         travelId:
             type: integer
+    manyToOne:
+         dam:
+           targetEntity: Dam
+           inversedBy: photo
+           joinColumn:
+             name: damId
+             referencedColumnName: id
+         travel:
+           targetEntity: Travel
+           inversedBy: photo
+           joinColumn:
+             name: travelId
+             referencedColumnName: id
     lifecycleCallbacks: {  }
