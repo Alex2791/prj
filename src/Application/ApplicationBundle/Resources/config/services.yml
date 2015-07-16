@@ -1,4 +1,31 @@
 services:
-#    application_application.example:
-#        class: Application\ApplicationBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.admin.photo:
+         class: Application\ApplicationBundle\Admin\PhotoAdmin
+         tags:
+             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Photo" }
+         arguments:
+             - ~
+             - Bundles\StoreBundle\Entity\Photo
+             - ~
+         calls:
+             - [ setTranslationDomain, [BundlesStoreBundle]]
+    sonata.admin.tag:
+         class: Application\ApplicationBundle\Admin\DamAdmin
+         tags:
+             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Dam" }
+         arguments:
+             - ~
+             - Bundles\StoreBundle\Entity\Dam
+             - ~
+         calls:
+             - [ setTranslationDomain, [BundlesStoreBundle]]
+    sonata.admin.dam:
+         class: Application\ApplicationBundle\Admin\TagAdmin
+         tags:
+             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Tag" }
+         arguments:
+             - ~
+             - Bundles\StoreBundle\Entity\Tag
+             - ~
+         calls:
+             - [ setTranslationDomain, [BundlesStoreBundle]]
