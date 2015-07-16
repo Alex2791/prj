@@ -9,21 +9,16 @@ Bundles\StoreBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-        login:
-            type: string
-            length: 255
-        password:
-            type: string
-            length: 255
+
         fio:
             type: string
             length: 255
+            nullable: TRUE
         tel:
             type: string
             length: 255
-        email:
-            type: string
-            length: 255
+            nullable: TRUE
+
     manyToMany:
          travel:
              targetEntity: Travel

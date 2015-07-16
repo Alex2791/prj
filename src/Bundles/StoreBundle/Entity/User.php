@@ -2,27 +2,55 @@
 
 namespace Bundles\StoreBundle\Entity;
 
+
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  */
-class User
+class User extends BaseUser
 {
+
+    /**
+     * Constructor
+     * edit __construct 16.07
+     *
+     */
+    public function __construct()
+    {
+        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dam = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct();
+
+    }
+
     /**
      * @var integer
      */
-    private $id;
+    protected  $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
 
     /**
      * @var string
      */
-    private $login;
+  //  protected  $username;
 
     /**
      * @var string
      */
-    private $password;
+    protected  $password;
 
     /**
      * @var string
@@ -37,41 +65,42 @@ class User
     /**
      * @var string
      */
-    private $email;
-
+    protected  $email;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @var \Doctrine\Common\Collections\Collection
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $travel;
 
     /**
-     * Set login
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $dam;
+
+
+
+    /**
+     * Set username
      *
-     * @param string $login
+     * @param string $username
      * @return User
      */
-    public function setLogin($login)
+    /*public function setUsername($username)
     {
-        $this->login = $login;
+        $this->username = $username;
 
         return $this;
-    }
+    }*/
 
     /**
-     * Get login
+     * Get username
      *
      * @return string 
      */
-    public function getLogin()
+  /*  public function getUsername()
     {
-        return $this->login;
-    }
+        return $this->username;
+    }*/
 
     /**
      * Set password
@@ -163,24 +192,6 @@ class User
     public function getEmail()
     {
         return $this->email;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $travel;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $dam;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->dam = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

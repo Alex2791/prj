@@ -136,4 +136,32 @@ class Photo
     {
         return $this->dam;
     }
+    /**
+     * @var \Bundles\StoreBundle\Entity\Travel
+     */
+    private $travel;
+
+
+    /**
+     * Set travel
+     *
+     * @param \Bundles\StoreBundle\Entity\Travel $travel
+     * @return Photo
+     */
+    public function setTravel(\Bundles\StoreBundle\Entity\Travel $travel = null)
+    {
+        $this->travel = $travel;
+
+        return $this;
+    }
+
+    /**
+     * Get travel
+     *
+     * @return \Bundles\StoreBundle\Entity\Travel 
+     */
+    public function getTravel()
+    {
+        return $this->travel;
+    }
 }
