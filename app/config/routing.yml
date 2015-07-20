@@ -5,6 +5,10 @@ bundles_store:
     resource: "@BundlesStoreBundle/Resources/config/routing.yml"
     prefix:   /
 
+wellcome:
+    path:   /
+    defaults: { _controller: FOSUserBundle:Security:login }
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

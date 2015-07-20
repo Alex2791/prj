@@ -8,6 +8,7 @@ class PageController extends Controller
 {
     public function indexAction()
     {
+
         return $this->render('ApplicationApplicationBundle:Page:index.html.twig');
     }
 }
